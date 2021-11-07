@@ -28,15 +28,25 @@ function listUsers(users) {
   Lista el response obtenido por medio de fetch y lo printa en el DOM 
   @param  {json}
   */
+  var fragment_user = document.createDocumentFragment();
   users.map((user, i) => {
+    let content_user = document.createElement("DIV");
+    content_user.classList.add("card-div");
     let name = document.createElement("h3");
+    name.classList.add("h3-name");
     let avatar = document.createElement("IMG");
+    avatar.classList.add("img-avatar");
+    avatar.src = getAvatar(user);
     name.innerHTML = `${i + 1}.  ${user.first_name}  ${
       user.last_name
     }<span style="color: green;"> correo electronico: </span>${user.email}`;
-    avatar.src = getAvatar(user);
-    div_usuarios.appendChild(name);
-    div_usuarios.appendChild(avatar);
+    content_user.appendChild(name);
+    content_user.appendChild(avatar);
+    fragment_user.appendChild(content_user);
+    div_usuarios.appendChild(fragment_user);
+
+    /* div_usuarios.appendChild(name);
+    div_usuarios.appendChild(avatar); */
     document.querySelector(".loading").style.display = "none";
   });
 }
