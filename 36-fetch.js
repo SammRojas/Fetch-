@@ -44,9 +44,6 @@ function listUsers(users) {
     content_user.appendChild(avatar);
     fragment_user.appendChild(content_user);
     div_usuarios.appendChild(fragment_user);
-
-    /* div_usuarios.appendChild(name);
-    div_usuarios.appendChild(avatar); */
     document.querySelector(".loading").style.display = "none";
   });
 }
