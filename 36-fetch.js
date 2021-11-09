@@ -7,10 +7,15 @@ getUsers()
   .then((data) => data.json())
   .then((users) => {
     listUsers(users.data);
+  })
+  .catch((e) => {
+    console.log(
+      "Hubo un problema con la petición Fetch hecha por samuel Rojas  -->  " + e
+    );
   });
 
 function getUsers() {
-  return fetch("https://reqres.in/api/users?page=1"); // peticion al servicio reqres.in
+  return fetch("https://reqres.in/api/users?page=6"); // peticion al servicio reqres.in
 }
 
 function getAvatar(user) {
