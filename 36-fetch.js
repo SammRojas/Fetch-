@@ -10,8 +10,10 @@ getUsers()
   })
   .catch((e) => {
     console.log(
-      "Hubo un problema con la petición Fetch hecha por samuel Rojas  -->  " + e
+      "Hubo un problema con la petición Fetch " +
+        e
     );
+    div_usuarios.innerHTML = `<h2>No es posible completar la tarea, por favor intente mas tarde</h2>`;
   });
 
 function getUsers() {
